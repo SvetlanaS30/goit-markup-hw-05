@@ -157,7 +157,7 @@ p {
 
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 
   display: block;
   width: 100%;
@@ -270,7 +270,8 @@ p {
   pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  transform: scale(1) translate(-50%, -50%);
+  transform: scale(1.1) translate(-50%, -50%);
+  opacity: 0;
   visibility: hidden;
 }
 .modal {
@@ -284,8 +285,10 @@ p {
   background-color: var(--primery-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: scale(0.9) translate(-50%, -50%);
-  transition: transform 250ms var(--transition-function);
+  opacity: 1;
+
+  transform: scale(1) translate(-50%, -50%);
+  transition: opacity 250ms var(--transition-function), transform 250ms var(--transition-function);
   visibility: visible;
 }
 .modal-close {
@@ -364,6 +367,9 @@ p {
   position: relative;
 }
 .works-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -375,10 +381,8 @@ p {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
   text-transform: uppercase;
   color: var(--primery-white-color);
-  padding-top: 27px;
 }
 
 /* Наша команда */
